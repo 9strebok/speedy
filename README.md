@@ -1,5 +1,5 @@
 # Usage
 
 ~~~bash
-    :wq
+    python3 speedy.py [site1] [site2]
 ~~~
