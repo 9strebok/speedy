@@ -30,6 +30,9 @@ def speedy(site):
 args = parse_args(sys.argv)
 
 if len(args) > 0:
-    [speedy(arg) for arg in args]
+    try:
+        [speedy(arg) for arg in args]
+    except:
+        print("Something wrong")
 else:
     speedy("google.com")
