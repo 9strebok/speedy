@@ -12,15 +12,14 @@ parser.add_argument("-s", action="store", dest="site", default="google.com", hel
 args = parser.parse_args()
 
 
-def nicePrint(first, second):
-    second = str(second)
-    print(LGRAY + first + NC + ": " + LGREEN + second + END + NC)
-    
+def nicePrint(txt, data):
+    data = str(data)
+    print(LGRAY + "[" + txt + "]" + NC + ": " + "\t" + LGREEN + data + END + NC)
+
 pst = pyspeedtest.SpeedTest(args.site)
 
 print()
-nicePrint("Using site:", args.site)
-print()
+nicePrint("Using site", args.site)
 nicePrint("Ping", pyspeedtest.pretty_speed(pst.ping()))
 nicePrint("Download", pyspeedtest.pretty_speed(pst.download()))
 print()
